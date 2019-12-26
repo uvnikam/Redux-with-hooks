@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { INCREMENT } from "../constant";
+import { INCREMENT, DECREMENT } from "../constant";
 
 const App = () => {
   const counter = useSelector(state => state); //useSelector === mapStateToProps
@@ -19,6 +19,16 @@ const App = () => {
         }
       >
         Increment
+      </button>
+      <button
+        onClick={() =>
+          dispatch({
+            type: DECREMENT,
+            step: 1
+          })
+        }
+      >
+        Decrement
       </button>
     </>
   );
